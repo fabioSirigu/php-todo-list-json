@@ -1,0 +1,44 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+#body {
+      background-color: rgb(88, 88, 88);
+}
+
+#app {
+      width: 80%;
+      height: 100vh;
+      margin: auto;
+
+}
+
+.text_through {
+      text-decoration: line-through;
+}
+
+.error {
+      border: 3px solid red;
+      border-radius: 1rem;
+      padding: 1rem;
+}
+
+.list-item.group {
+      position: relative;
+}
+
+.icon_x {
+      position: absolute;
+      right: 10px;
+      cursor: pointer;
+}
+
+.bg_todo {
+      background-color: palegreen;
+}
+
+.lightning {
+      color: black;
+}
