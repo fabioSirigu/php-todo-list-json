@@ -23,14 +23,23 @@ if (isset($_POST['task'])) {
       array_push($all_tasks, $task);
       $json_tasks = json_encode($all_tasks);
       file_put_contents('tasks.json', $json_tasks);
-} elseif (isset($_POST['done'])) {
+};
+
+if (isset($_POST['done'])) {
 
       $index = $_POST['done'];
       array_splice($all_tasks, $index, 1);
       $json_tasks = json_encode($all_tasks);
       file_put_contents('tasks.json', $json_tasks);
-}
+};
 
+if (isset($_POST["changeDone"])) {
+
+      $done = $_POST["changeDone"];
+      $all_tasks[$done]["done"] = !$all_tasks[$done]["done"];
+      $all_tasks = $all_tasks;
+      file_put_contents("tasks.json", json_encode($all_tasks));
+};
 
 
 header('Content-Type: application/json');

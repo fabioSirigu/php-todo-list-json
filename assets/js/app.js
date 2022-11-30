@@ -51,10 +51,23 @@ createApp({
                         }).catch(err => {
                               console.log(err.message);
                         })
-
             },
             changeDone(index) {
-                  this.tasks[index].done = !this.tasks[index].done;
+                  /* this.tasks[index].done = !this.tasks[index].done; */
+                  const data = {
+                        changeDone: index,
+                  }
+
+                  axios
+                        .post(this.api_url, data, {
+                              headers: { 'Content-Type': 'multipart/form-data' }
+                        })
+                        .then((response) => {
+                              this.tasks = response.data
+
+                        }).catch(err => {
+                              console.log(err.message);
+                        })
             }
 
       },

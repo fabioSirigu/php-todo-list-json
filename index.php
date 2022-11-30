@@ -20,9 +20,9 @@
             <div class="container d-flex justify-content-center">
                   <div class="addTask mx-4">
                         <h3 class="lightning">Aggiungi alla lista</h3>
-                        <input type="text" v-model="task.name" @keyup.enter="addTask" class="form-label p-2" name="task">
+                        <input type="text" v-model="task.text" @keyup.enter="addTask" class="form-label p-2" name="task">
                         <button @click="addTask" type="submit" class="btn btn-primary mx-4">Aggiungi</button>
-                        <small v-show="error" class="text-danger error">Devi inserire almeno 5 caratteri</small>
+
                         <div class="legend">
                               <h5 class="text_uppercase lightning">legenda</h5>
                               <ul class="list-group w-50 text-uppercase">
