@@ -11,7 +11,7 @@ Abilitare l’eliminazione di un task */
 
 
 $tasks = file_get_contents('tasks.json');
-$all_tasks = json_decode($tasks);
+$all_tasks = json_decode($tasks, true);
 
 
 if (isset($_POST['task'])) {
@@ -35,10 +35,10 @@ if (isset($_POST['done'])) {
 
 if (isset($_POST["changeDone"])) {
 
-      $done = $_POST["changeDone"];
+      $done = $_POST['changeDone'];
       $all_tasks[$done]["done"] = !$all_tasks[$done]["done"];
-      $all_tasks = $all_tasks;
-      file_put_contents("tasks.json", json_encode($all_tasks));
+      $json_tasks = json_encode($all_tasks);
+      file_put_contents('tasks.json', $json_tasks);
 };
 
 
